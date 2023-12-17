@@ -25,10 +25,9 @@ def load_file():
 
 
 def on_text_changed(event):
-    if text_area.get(1.0, tk.END) == '\n':  # If the text area is empty
+    if text_area.get(1.0, tk.END) == '\n':  
         text_area.delete(1.0, tk.END)
-        placeholder_text = """Type here...
-Multiline example"""
+        placeholder_text = """Copy template.pc from https://github.com/h3lstudios/ProCode"""
         text_area.insert(tk.END, placeholder_text)
 
 
@@ -37,8 +36,8 @@ root.title("Text Editor")
 
 
 # Logo
-logo_image = Image.open("logo.png")  # Replace "logo.png" with the path to your logo image
-logo_image = logo_image.resize((200, 200))  # Adjust the size of the logo image as needed
+logo_image = Image.open("logo.png") 
+logo_image = logo_image.resize((200, 200))
 logo_photo = ImageTk.PhotoImage(logo_image)
 logo_label = tk.Label(root, image=logo_photo)
 logo_label.pack()
@@ -46,7 +45,7 @@ logo_label.pack()
 
 text_area = tk.Text(root)
 text_area.pack(fill=tk.BOTH, expand=True)
-text_area.ind("<FocusIn>", on_text_changed)  # Bind the event handler
+text_area.ind("<FocusIn>", on_text_changed)
 
 
 save_button = tk.Button(root, text="Save", command=save_file)
